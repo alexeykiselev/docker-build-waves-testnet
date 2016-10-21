@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:8_server-jre
 
 MAINTAINER Alexey Kiselev <alexey.kiselev@gmail.com>
 
-EXPOSE 6869 6868
+EXPOSE 6863 6869
 
 ENV SCALA_VERSION 2.11.8 
 
