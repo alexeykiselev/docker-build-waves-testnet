@@ -36,7 +36,7 @@ echo "Building Waves version ${WAVES_VERSION} on branch ${WAVES_BRANCH}"
 echo "********************************************************************************"
 echo ""
 
-/build/sbt/bin/sbt clean stage
+/build/sbt/bin/sbt clean update stage
 cp -R target/universal/stage/* /waves
 chmod +x /waves/bin/waves
 
