@@ -36,6 +36,8 @@ echo "Building Waves version ${WAVES_VERSION} on branch ${WAVES_BRANCH}"
 echo "********************************************************************************"
 echo ""
 
+rm -rfv /root/.ivy2/cache/com.wavesplatform/
+
 /build/sbt/bin/sbt clean update stage
 cp -R target/universal/stage/* /waves
 chmod +x /waves/bin/waves
