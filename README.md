@@ -1,6 +1,6 @@
 # Docker container for Waves testnet node 
 
-[![](https://images.microbadger.com/badges/image/wavesplatform/build-waves-testnet.svg)](http://microbadger.com/images/wavesplatform/build-waves-testnet "Information about Docker image")
+[![](https://images.microbadger.com/badges/image/wavesplatform/docker-build-waves-testnet.svg)](https://microbadger.com/images/wavesplatform/docker-build-waves-testnet "Information about Docker image")
 
 Waves is a decentralised platform that allows any user to issue, transfer, swap and trade custom blockchain tokens on an integrated peer-to-peer exchange.
 You can find more information about Waves at [wavesplatform.com](http://wavesplatform.com/) and [GitHub](https://github.com/wavesplatform).
