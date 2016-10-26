@@ -48,10 +48,11 @@ echo "Preparing test net configuration file..."
 echo "********************************************************************************"
 echo ""
 
-MAX_JVM_MEMORY=$(( $(java -XX:+PrintFlagsFinal -version|grep -i maxheapsize | grep -o '[0-9]*') * 3))
-sed -i "s/-J-Xmx1024m/-J-Xmx${MAX_JVM_MEMORY}/g" /waves/conf/application.ini
+FREE_MEMORY=$(free | awk '/^Mem:/{print $4}')
+MAX_JVM_MEMORY=$(( ${FREE_MEMORY} * 75 / 100 / 1024 ))
+sed -i "s/-J-Xmx1024m/-J-Xmx${MAX_JVM_MEMORY}m/g" /waves/conf/application.ini
 
-echo "Xmx set to ${MAX_JVM_MEMORY}"
+echo "JVM Xmx was set to ${MAX_JVM_MEMORY}m"
 
 if [ ! -f /waves/waves-testnet.json ]; then
 	echo "Configuration file not found. Initializing..."
@@ -75,4 +76,5 @@ echo "**************************************************************************
 echo "Starting Waves..."
 echo "********************************************************************************"
 echo ""
+
 bin/waves waves-testnet.json
