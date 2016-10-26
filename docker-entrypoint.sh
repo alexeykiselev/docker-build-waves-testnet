@@ -49,7 +49,7 @@ echo "**************************************************************************
 echo ""
 
 FREE_MEMORY=$(free | awk '/^Mem:/{print $4}')
-MAX_JVM_MEMORY=$(( ${FREE_MEMORY} * 75 / 100 / 1024 ))
+MAX_JVM_MEMORY=$(( ${FREE_MEMORY} * 85 / 100 / 1024 ))
 sed -i "s/-J-Xmx1024m/-J-Xmx${MAX_JVM_MEMORY}m/g" /waves/conf/application.ini
 
 echo "JVM Xmx was set to ${MAX_JVM_MEMORY}m"
