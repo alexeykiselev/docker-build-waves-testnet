@@ -65,6 +65,8 @@ if [ ! -f /waves/waves-testnet.json ]; then
 	echo "New seed: $NEWSEED"
 
 	sed "s/\"walletSeed\": \"\",/\"walletSeed\": \"$NEWSEED\",/g;s+/tmp/scorex++g;s/127.0.0.1/0.0.0.0/g" /build/Waves/waves-testnet.json > /waves/waves-testnet.json
+	
+	sed -i "s+\"walletDir\": \"\",+\"walletDir\": \"/waves/wallet\",+g;s+\"dataDir\": \"\",+\"dataDir\": \"/waves/data\",+g" /waves/waves-testnet.json
 
 	cat /waves/waves-testnet.json
 fi

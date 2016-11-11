@@ -25,9 +25,9 @@ On completing the build scipt starts the Waves with generated or provided config
 Here is the example of using the container:
 
 ```
-docker pull wavesplatform/build-waves-testnet
+docker pull wavesplatform/docker-build-waves-testnet
 
-docker run wavesplatform/build-waves-testnet some-scorex-branch some-waves-branch
+docker run wavesplatform/docker-build-waves-testnet some-scorex-branch some-waves-branch
 
 ```
 
@@ -59,7 +59,7 @@ cd docker-build-waves-testnet
 Build an image with the following command:
 
 ```
-docker build -t build-waves-testnet .
+docker build -t docker-build-waves-testnet .
 
 ```
 
@@ -71,12 +71,12 @@ List your Docker's images:
 docker images
 ```
 
-If you built the image by yourself it will have the name you gave to it (in our example it is 'waves-testnet'). If you have downloaded the image from Docker Hub it is tagged with 'wavesplatform/build-waves-testnet:latest'.
+If you built the image by yourself it will have the name you gave to it (in our example it is 'waves-testnet'). If you have downloaded the image from Docker Hub it is tagged with 'wavesplatform/docker-build-waves-testnet:latest'.
 
 To start a new Docker container, please, execute:
 
 ```
-docker run --name build-waves-testnet wavesplatform/build-waves-testnet:latest
+docker run --name docker-build-waves-testnet wavesplatform/docker-build-waves-testnet:latest
 
 ```
 
@@ -87,9 +87,9 @@ This image defines a storage volume in folder `/waves`. This folder is persisted
 Alternatively you can map the volume on a host folder using option `-v` as in:
 
 ```
-docker run --name build-waves-testnet -v /home/user/local-waves-folder:/waves wavesplatform/build-waves-testnet:latest
+docker run --name docker-build-waves-testnet -v /home/user/local-waves-folder:/waves wavesplatform/docker-build-waves-testnet:latest
 ```
 
 At first run a new wallet seed will be created for you and stored in `waves-testnet.json` configuration file on the volume.
 
-To start and stop the container use Docker commands `docker start build-waves-testnet` and `docker stop build-waves-testnet`. We address the container by its name which we gave to it in the `--name` option of the `run` command.
+To start and stop the container use Docker commands `docker start docker-build-waves-testnet` and `docker stop docker-build-waves-testnet`. We address the container by its name which we gave to it in the `--name` option of the `run` command.
